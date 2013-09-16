@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-feature %Q{'User submits a contact inquiry'} do
-  # As a site visitor
-  # I want to contact DogHub staff
-  # So that I can tell them how awesome they are
-  #
+feature 'User submits a contact inquiry', %Q{
+    As a site visitor
+    I want to contact DogHub staff
+    So that I can tell them how awesome they are
+    } do
   # Acceptance Criteria
   #
   # * I must specify a valid email address
@@ -22,7 +22,6 @@ feature %Q{'User submits a contact inquiry'} do
     fill_in 'Last name', with: 'Durr'
     click_button 'Create Inquiry'
     expect(page).to have_content('Contact Inquiry successfully submitted!')
-    expect(page).to have_content('Durr')
   end
 
   scenario 'does not record my inquiry and gives me an error if invalid' do
